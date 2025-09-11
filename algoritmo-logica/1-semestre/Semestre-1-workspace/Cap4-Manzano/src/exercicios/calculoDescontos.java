@@ -12,8 +12,8 @@ public class calculoDescontos {
 		String parceria;
 		char tipoCliente;
 		
-		double valorTotal, desconto;
-		int parcelas;
+		double valorTotal, desconto, valorFinal, valorParcela=0;
+		int parcelas=0;
 		
 		
 		
@@ -35,24 +35,45 @@ public class calculoDescontos {
 			desconto = 0;
 		}
 		
-		valorTotal -= desconto;
+		valorFinal = valorTotal - desconto;
 		
-		if(valorTotal > 500) {
+		if(valorFinal > 500) {
 			System.out.println("Digite a opção de parcelamento 3x sem juros ou 4x a 6x com juros de 18% sobre o total de parcelas:");
 			parcelas = entrada.nextInt();
 			
-			if(parcelas == 3) {
-				valorTotal = valorTotal / 3;
-				
-				
+			switch(parcelas) {
+			case 3:
+				parcelas = 3;
+				break;
+			case 4:
+				parcelas = 4;
+				valorParcela = valorFinal / parcelas;
+				valorParcela += valorParcela * 0.18;
+				break;
+			case 5: 
+				parcelas = 5;
+				valorParcela = valorFinal / parcelas;
+				valorParcela += valorParcela * 0.18;
+				break;
+			case 6:
+				parcelas = 6;
+				valorParcela = valorFinal / parcelas;
+				valorParcela += valorParcela * 0.18;
+				break;
 			}
+			
+		} else {
+			parcelas = 0;
+			valorParcela = 0;
 		}
 		
 		System.out.println("Cliente: " + nomeCliente);
-		System.out.println("Tipo:" + );
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
+		System.out.println("Tipo:" + parceria);
+		System.out.println("Valor da compra: " + valorTotal);
+		System.out.println("Desconto aplicado: " + desconto);
+		System.out.println("Valor Final: " + valorFinal);
+		System.out.println("Parcelamento em " +parcelas+ "x:");
+		System.out.println("Valor das parcelas: R$ " + valorParcela);
 		
 	}
 
