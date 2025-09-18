@@ -19,12 +19,8 @@ public class exercicio4 {
 				linha++; 
 			}
 			System.out.println("");
-			System.out.println("linha" +linha);
-			System.out.println("cont" + cont);
 			linha = linha - 3;
 			cont = cont + 1;
-			System.out.println("linha" +linha);
-			System.out.println("cont" + cont);
 			coluna++;
 		}
 		
