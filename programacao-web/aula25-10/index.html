@@ -1,32 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Exercício lista de tarefas</h1>
     <div>
         <input class="input-texto" type="text" placeholder="Digite a tarefa...">
+        <label for="">Categoria: </label>
         <select class="select">
-            <option id="casa" value="casa">Casa</option>
-            <option id="trabalho" value="trabalho">Trabalho</option>
-            <option id="faculdade" value="facul">Facul</option>
+            <option id="casa">casa</option>
+            <option id="trabalho">trabalho</option>
+            <option id="faculdade">faculdade</option>
         </select>
-
         <button onclick="adicionarTarefa()">adicionar</button>
+    </div>
+    <div>
+        <h3>Filtro</h3>
+        <input class="filtro" value="casa" type="checkbox">
+        <label for="">casa</label>
+
+        <input class="filtro" value="trabalho" type="checkbox">
+        <label for="">trabalho</label>
+
+        <input class="filtro" value="faculdade" type="checkbox">
+        <label for="">faculdade</label>
+
+        <button onclick="filtrarTarefa()">Filtrar</button>
     </div>
    
 
-    <div class="listaTarefas">
-        <ul class="tarefa-casa">
-
-        </ul>
-        <ul class="tarefa-trabalho">
-
-        </ul>
-        <ul class="tarefa-faculdade">
+    <div >
+        <ul class="lista-tarefas">
 
         </ul>
     </div>
